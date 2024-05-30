@@ -3,10 +3,14 @@ package web.dao;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import web.model.User;
+
 import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.TypedQuery;
+
 import org.hibernate.query.Query;
 
 @Repository
@@ -18,7 +22,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getUsers() {
-        TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
+        TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User");
         return query.getResultList();
     }
 
